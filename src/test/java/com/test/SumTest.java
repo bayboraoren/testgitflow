@@ -30,4 +30,10 @@ public class SumTest {
         int result = calculator.substruct(a,b);
         assertThat(1,IsEqual.equalTo(result));
     }
+
+    @Test
+    public void testMultiply(){
+        int result = calculator.multiply(a,b);
+        assertThat(6,IsEqual.equalTo(result));
+    }
 }

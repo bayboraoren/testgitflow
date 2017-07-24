@@ -11,29 +11,45 @@ public class SumTest {
     private Calculator calculator;
     int a;
     int b;
+    int addResult;
+    int substructionResult;
+    int multiplyResult;
+    int divisionResult;
 
     @Before
     public void setup(){
-        a = 3;
+        a = 4;
         b = 2;
+
+        addResult=a+b;
+        substructionResult=a-b;
+        multiplyResult=a*b;
+        divisionResult=a/b;
+
         calculator = new Calculator();
     }
 
     @Test
     public void testAdd() {
         int result = calculator.sum(a,b);
-        assertThat(5,IsEqual.equalTo(result));
+        assertThat(addResult,IsEqual.equalTo(result));
     }
 
     @Test
     public void testSubstruction(){
         int result = calculator.substruct(a,b);
-        assertThat(1,IsEqual.equalTo(result));
+        assertThat(substructionResult,IsEqual.equalTo(result));
     }
 
     @Test
     public void testMultiply(){
         int result = calculator.multiply(a,b);
-        assertThat(6,IsEqual.equalTo(result));
+        assertThat(multiplyResult,IsEqual.equalTo(result));
+    }
+
+    @Test
+    public void testDivision(){
+        int result = calculator.division(a,b);
+        assertThat(divisionResult,IsEqual.equalTo(result));
     }
 }
